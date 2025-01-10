@@ -5,10 +5,6 @@ This file takes the landed table for employee data and cleans it.
     materialized="incremental", 
     unique_key=["emp_id"], 
     schema = "staging"
-
-
-
-    
     ) }}
 
 select
