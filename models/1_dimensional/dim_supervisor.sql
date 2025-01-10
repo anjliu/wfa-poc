@@ -1,7 +1,12 @@
 /*
 This file uses the employee data and creates a dim table for supervisors.
 */
-{{ config(materialized="incremental", unique_key=["emp_id"], schema="dimensional") }}
+{{ config(
+    materialized="incremental", 
+    unique_key=["emp_id"], 
+    schema="dimensional",
+    tags=["general_dim"]
+    ) }}
 
 select
     supervisor,

@@ -4,7 +4,8 @@ This file uses the employee data and creates a dim table.
 {{ config(
     materialized="incremental", 
     unique_key=["emp_id"], 
-    schema = "dimensional"
+    schema = "dimensional",
+    tags=["general_dim"]
     ) }}
 
 select

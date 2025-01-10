@@ -4,7 +4,8 @@ This model creates a fact table for terminations using the engagement survey and
 {{ config(
     materialized="incremental", 
     unique_key=["emp_id"], 
-    schema="dimensional"
+    schema="dimensional",
+    tags=["termination"]
     ) }}
 
 select
