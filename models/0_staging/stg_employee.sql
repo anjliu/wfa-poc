@@ -5,6 +5,10 @@ This file takes the landed table for employee data and cleans it.
     materialized="incremental", 
     unique_key=["emp_id"], 
     schema = "staging"
+
+
+
+    
     ) }}
 
 select
@@ -36,3 +40,4 @@ select
     cast(`Current Employee Rating` as integer) as current_employee_rating,
     current_timestamp() as record_updated
 from {{ source("big_query_landing", "employee") }}
+where 1=1
