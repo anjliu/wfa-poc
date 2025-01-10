@@ -13,14 +13,13 @@ sources:
             tests:
               - unique
               - not_null
-      - name: engagement_survey
-        identifier: "engagement_survey"
-        description: "..."
-        columns:
-          - name: 'Employee ID'
-            tests:
+
+models:
+  - name: stg_engagement_survey
+    columns:
+      - name: employee_id
+        tests:
               - not_null
               - relationships:
                   field: emp_id
                   to: ref('stg_employee')
-
