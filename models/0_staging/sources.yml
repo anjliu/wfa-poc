@@ -1,0 +1,26 @@
+version: 2
+
+sources:
+  - name: big_query_landing
+    schema: landing
+    tables:
+      - name: employee
+        identifier: "employee"
+        description: "This table contains employee records with their personal and job-related information."
+        columns: # doesn't have to be a complete list of all columns.
+          - name: EmpID
+            description: "The unique identifier for each employee."
+            tests:
+              - unique
+              - not_null
+      - name: engagement_survey
+        identifier: "engagement_survey"
+        description: "..."
+        columns:
+          - name: 'Employee ID'
+            tests:
+              - not_null
+              - relationships:
+                  field: emp_id
+                  to: ref('stg_employee')
+
